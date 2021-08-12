@@ -1,1 +1,6 @@
-<h1><%="#{@player_1} attacks #{@player_2} and deals 10 damage"%></h1>
+<h1><%="#{@player_1.name} attacks #{@player_2.name} and deals 10 damage"%></h1>
+<div>
+  <form action="/play" method="get">
+    <input type="submit" name="go_back" value="Next turn!"><br>
+  </form>
+</div>
