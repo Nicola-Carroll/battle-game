@@ -24,13 +24,14 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1 = $game.player1
     @player_2 = $game.player2
+    @current_player = $game.current_player.name
     erb(:play)
   end
 
   get '/attack' do
     @player_1 = $game.player1
     @player_2 = $game.player2
-    @player_2.reduce_hp(10)
+    $game.attack(10)
     erb(:attack)
   end
 
