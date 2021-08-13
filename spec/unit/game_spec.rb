@@ -1,8 +1,10 @@
 require 'game'
 
 describe Game do
+  let(:player1) { double :player1 }
   let(:player2) { double :player2 }
   let(:player_class) { double :player_class, new: player2 }
+
   subject(:game) { 
     described_class.new("SuperHans",
       "Darth Vader",
@@ -16,6 +18,11 @@ describe Game do
       game.attack(10)
     end
 
-  end
+    it 'causes the players to be switched' do
+      # puts game.player1
+      # puts game.player2
 
+      # expect(game.switch_turns).to eq(game.player2) 
+    end
+  end
 end

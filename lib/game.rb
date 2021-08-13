@@ -3,6 +3,8 @@ class Game
   def initialize(name1, name2, player_class:)
     @player1 = player_class.new(name1)
     @player2 = player_class.new(name2)
+
+    @current_player = @player1
   end
 
   def player1
@@ -15,6 +17,12 @@ class Game
 
   def attack(amount)
     @player2.reduce_hp(amount)
+  end
+
+  def switch_turns
+    players = [@player1, @player2]
+    
+    @current_player = players.reject{ |p| p == @current_player }[0]
   end
 
 end
